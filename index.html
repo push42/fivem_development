@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="nui://game/ui/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://kit.fontawesome.com/9d1f4cdd15.css" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/9d1f4cdd15.js" crossorigin="anonymous"></script>
+
+	<title>RV Identity</title>
+</head>
+
+<body onkeydown="TriggeredKey(this)">
+	<header>
+		<div class="new-box"></div>
+	</header>
+	<div class="main-container">
+		<div class="left-container">
+			<div class="left-box">
+				<div class="row border-container">
+					<div class="col col-header">
+						<h4 class="title4"><b><u>Hinweise</u></b></h4>
+					</div>
+				</div>
+				<div class="row border-container">
+					<div class="col col-content">
+						<h4 class="title3">
+							<span class="icon"><i class="fa-solid fa-signature"></i></span>
+							Namensgebung
+						</h4>
+						<p class="text">Das verwenden von rassistischen, sexistischen oder stigmatisierende Namen ist
+							nicht geduldet
+							und wird noch bei der Einreise mit einem Bann bestraft.</p>
+					</div>
+				</div>
+				<div class="row border-container">
+					<div class="col col-content">
+						<h4 class="title3">
+							<span class="icon"><i class="fa-solid fa-microphone"></i></span>
+							Chat / Voice
+						</h4>
+						<p class="text">Auf RogueV ist die Chatfunktion deakiviert. Du kannst nach wie vor den Chat für
+							Befehle
+							nutzen, jedoch kann niemand außer dir selbst deine Nachrichten lesen. Nutze dafür bitte den
+							Voice-Chat.</p>
+					</div>
+				</div>
+				<div class="row last-row">
+					<div class="col  col-content">
+						<h4 class="title3">
+							<span class="icon"><i class="fa-solid fa-suitcase-rolling"></i></span>
+							Einreise
+						</h4>
+						<p class="text">Nach Erstellung deines Charakters wirst du am Flughafen von einem Teamler durch
+							die
+							IC-Whitelist geführt.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="dialog">
+			<div class="title"><b class="fancy-title">ROGUEV</b></div>
+			<div class="title2"><i class="title-icon fa-solid fa-user-pen"></i><small>Erstelle deine Identiät</small></div>
+			<form id="register" name="register" action="#">
+				<div style="color: #4949d4;font-size: 14px; font-weight: 500; font-family: 'Lato', sans-serif">Vorname
+				</div>
+				<input id="firstname" type="text" class="" name="firstname" placeholder="Wie heißt Du?" minlength="3"
+					maxlength="8" pattern="[a-zA-Z]*"><br>
+				<div style="color: #4949d4;font-size: 14px; font-weight: 500; font-family: 'Lato', sans-serif">Nachname
+				</div>
+				<input id="lastname" type="text" class="" name="lastname" placeholder="Wie lautet dein Nachname?"
+					minlength="3" maxlength="10" pattern="[a-zA-Z]*"><br>
+				<div style="color: #4949d4;font-size: 14px; font-weight: 500; font-family: 'Lato', sans-serif">
+					Geburtsdatum
+					(MM/DD/YYYY)</div>
+				<input id="dateofbirth" type="date" name="dateofbirth" class="" min="1900-01-01" max="2010-01-01"
+					onfocus="(this.type='date')"><br>
+				<div style="color: #4949d4;font-size: 14px; font-weight: 500; font-family: 'Lato', sans-serif">Größe
+				</div>
+				<input id="height" type="number" class="" name="height" min="120" max="220"
+					placeholder="Wie groß bist Du? (in cm)"><br>
+				<center>
+					<div class="radio-toolbar">
+						<input type="radio" id="radiom" name="sex" value="m" checked>
+						<label for="radiom">Mann</label>
+
+						<input type="radio" id="radiof" name="sex" value="f">
+						<label for="radiof">Frau</label>
+					</div>
+				</center>
+				<button id="submit" type="submit">
+					<font size="2.3px">EINREISEN</font>
+				</button>
+			</form>
+			<center>
+				<font size="0.7px" color="#4949d4">Solltest du Probleme beim erstellen eines Charakters haben, überprüfe
+					bitte
+					deine Eingaben.</font>
+			</center>
+		</div>
+
+		<div class="right-container">
+			<div class="right-box">
+				<div class="row border-container">
+					<div class="col col-header">
+						<h4 class="title4"><b><u>RogueV - Links</u></b></h4>
+					</div>
+				</div>
+				<div class="row border-container">
+					<div class="col col-content">
+						<h4 class="title3"><span class="icon"><i class="fa-brands fa-discord"></i></span>Discord</h4>
+						<p class="text">dsc.gg/rougev</p>
+					</div>
+				</div>
+				<div class="row border-container">
+					<div class="col col-content">
+						<h4 class="title3"><span class="icon"><i class="fa-solid fa-globe"></i></span>Website</h4>
+						<p class="text">www.roguev.de</p>
+					</div>
+				</div>
+				<div class="row last-row">
+					<div class="col col-content">
+						<h4 class="title3"><span class="icon"><i class="fa-brands fa-teamspeak"></i></span>Teamspeak
+						</h4>
+						<p class="text">ts3.roguev.de</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function TriggeredKey(e) {
+			var keycode;
+			if (window.event) keycode = window.event.keyCode;
+			if (window.event.keyCode == 13 || window.event.keyCode == 27) return false;
+		}
+	</script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
