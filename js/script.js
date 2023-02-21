@@ -35,3 +35,4 @@ $(document).ready(function () {
     $('#register').trigger('reset');
   });
 });
+
